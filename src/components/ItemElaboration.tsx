@@ -71,7 +71,7 @@ export default function ItemElaboration({ itemName, itemPrice, receiptText, stor
     <>
       <button
         onClick={handleOpen}
-        className="flex items-center gap-1 px-2 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded text-xs transition-colors"
+        className="flex items-center gap-1 px-2 py-1 bg-gray-100 hover:bg-gray-200 text-black rounded text-xs transition-colors font-semibold"
         title="Get more details about this item"
       >
         <HelpCircle className="w-3 h-3" />
@@ -87,7 +87,7 @@ export default function ItemElaboration({ itemName, itemPrice, receiptText, stor
               </h3>
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-2 rounded-full hover:bg-gray-100 text-gray-600 hover:text-gray-800 transition-colors"
+                className="p-2 rounded-full hover:bg-gray-100 text-black hover:text-gray-800 transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -97,9 +97,9 @@ export default function ItemElaboration({ itemName, itemPrice, receiptText, stor
               {/* Item Info */}
               <div className="mb-4 p-3 bg-gray-50 rounded-lg">
                 <h4 className="font-semibold text-black mb-1">{itemName}</h4>
-                <p className="text-sm text-gray-700">Price: ${itemPrice.toFixed(2)}</p>
+                <p className="text-sm text-black font-semibold">Price: ${itemPrice.toFixed(2)}</p>
                 {storeName && (
-                  <p className="text-sm text-gray-700">Store: {storeName}</p>
+                  <p className="text-sm text-black font-semibold">Store: {storeName}</p>
                 )}
               </div>
 
@@ -111,13 +111,13 @@ export default function ItemElaboration({ itemName, itemPrice, receiptText, stor
                 </div>
                 
                 {isLoading ? (
-                  <div className="flex items-center gap-2 text-gray-600">
+                  <div className="flex items-center gap-2 text-black">
                     <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-500"></div>
-                    <span className="text-sm">Analyzing item...</span>
+                    <span className="text-sm font-semibold">Analyzing item...</span>
                   </div>
                 ) : (
                   <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
-                    <p className="text-sm text-gray-800 leading-relaxed">
+                    <p className="text-sm text-black leading-relaxed font-medium">
                       {elaboration || 'Click the button to generate item details.'}
                     </p>
                   </div>

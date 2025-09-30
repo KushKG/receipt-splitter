@@ -142,14 +142,14 @@ export default function FileUpload({ onFileSelect, isLoading, progress }: FileUp
           <div className="space-y-4">
             <Upload className="w-12 h-12 text-gray-400 mx-auto" />
             <div>
-              <p className="text-lg font-medium text-gray-900 dark:text-gray-100">
+              <p className="text-lg font-medium text-black">
                 Upload your receipt
               </p>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
+              <p className="text-sm text-black font-medium">
                 Drag and drop an image here, or click to select
               </p>
             </div>
-            <p className="text-xs text-gray-400 dark:text-gray-500">
+            <p className="text-xs text-black font-semibold">
               Supports JPG, PNG, GIF, HEIC up to 10MB
             </p>
           </div>

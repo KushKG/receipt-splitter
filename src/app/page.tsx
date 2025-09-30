@@ -131,10 +131,10 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50 py-6">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+          <h1 className="text-3xl font-bold text-black mb-2">
             Receipt Splitter
           </h1>
-          <p className="text-gray-600">
+          <p className="text-black font-semibold">
             Upload a receipt and split the bill among friends
           </p>
         </div>
@@ -152,13 +152,13 @@ export default function Home() {
             </div>
             <FileUpload onFileSelect={handleFileUpload} isLoading={isProcessing} progress={progress} />
             {error && (
-              <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-md">
-                <p className="text-red-700 text-sm">{error}</p>
+              <div className="mt-4 p-3 bg-red-50 border-2 border-red-600 rounded-md">
+                <p className="text-red-900 text-sm font-bold">{error}</p>
               </div>
             )}
             {successMessage && (
-              <div className="mt-4 p-3 bg-green-50 border border-green-200 rounded-md">
-                <p className="text-green-700 text-sm">{successMessage}</p>
+              <div className="mt-4 p-3 bg-green-50 border-2 border-green-600 rounded-md">
+                <p className="text-green-900 text-sm font-bold">{successMessage}</p>
               </div>
             )}
           </div>

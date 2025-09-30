@@ -74,7 +74,7 @@ export default function SplitResults({ results }: SplitResultsProps) {
           title: 'Bill Split Results',
           text: text
         });
-      } catch (err) {
+      } catch {
         console.log('Share cancelled');
       }
     } else {

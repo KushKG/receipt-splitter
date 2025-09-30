@@ -74,7 +74,7 @@ Examples:
     console.error('Error generating item elaboration:', error);
     
     // Fallback response
-    const fallbackElaboration = `This appears to be "${itemName}" with a price of $${itemPrice?.toFixed(2) || 'unknown'}. Based on the price point and store context, this is likely a grocery store item. You might want to check your receipt or ask the person who bought it for more details.`;
+    const fallbackElaboration = `This appears to be a grocery store item with a price of $${itemPrice?.toFixed(2) || 'unknown'}. You might want to check your receipt or ask the person who bought it for more details.`;
     
     return NextResponse.json({ elaboration: fallbackElaboration });
   }

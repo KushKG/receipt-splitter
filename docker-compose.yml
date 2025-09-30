@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/app
+    volumes:
+      - ./backend:/app
+
+  # Optional: Add a service for the actual CRAFT model download
+  craft-downloader:
+    image: python:3.9-slim
+    volumes:
+      - ./backend:/app
+    command: |
+      bash -c "
+        if [ ! -f /app/craft_mlt_25k.pth ]; then
+          echo 'CRAFT model not found. Please download manually:'
+          echo 'https://drive.google.com/open?id=1Jk4eGD7crsqCCg9C9VjCLkMN3ze8kutZ'
+          echo 'Save as: backend/craft_mlt_25k.pth'
+        fi
+      "

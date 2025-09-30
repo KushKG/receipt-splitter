@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Download, Copy, Check, DollarSign, Calculator, Receipt, Share2 } from 'lucide-react';
+import { Download, Copy, Check, Share2 } from 'lucide-react';
 import { SplitResult } from '@/types';
 
 interface SplitResultsProps {
@@ -55,8 +55,8 @@ export default function SplitResults({ results }: SplitResultsProps) {
       await navigator.clipboard.writeText(text);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error('Failed to copy to clipboard:', err);
+    } catch {
+      console.error('Failed to copy to clipboard');
     }
   };
 
@@ -128,7 +128,7 @@ export default function SplitResults({ results }: SplitResultsProps) {
 
       {/* Receipt Items */}
       <div className="px-4 py-2">
-        {results.map((result, index) => (
+             {results.map((result) => (
           <div key={result.personId} className="mb-4">
             {/* Person Header */}
             <div className="text-center mb-2">

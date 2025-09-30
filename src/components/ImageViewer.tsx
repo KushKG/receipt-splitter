@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { X, Eye, Download } from 'lucide-react';
 
 interface ImageViewerProps {
@@ -58,13 +59,17 @@ export default function ImageViewer({ imageUrl, fileName }: ImageViewerProps) {
             </div>
 
             {/* Image */}
-            <div className="p-4 overflow-auto max-h-[80vh]">
-              <img
-                src={imageUrl}
-                alt="Receipt"
-                className="max-w-full h-auto rounded-lg shadow-lg"
-                style={{ maxHeight: '70vh' }}
-              />
+            <div className="p-4 overflow-auto max-h-[80vh] flex justify-center items-center">
+              <div className="relative max-w-full max-h-[70vh]">
+                <Image
+                  src={imageUrl}
+                  alt="Receipt"
+                  width={800}
+                  height={600}
+                  className="rounded-lg shadow-lg"
+                  style={{ maxHeight: '70vh', width: 'auto', height: 'auto' }}
+                />
+              </div>
             </div>
 
             {/* Footer */}

@@ -70,7 +70,7 @@ Examples:
 
     return NextResponse.json({ elaboration });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error generating item elaboration:', error);
     
     // Fallback response

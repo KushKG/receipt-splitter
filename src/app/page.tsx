@@ -34,7 +34,7 @@ export default function Home() {
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [uploadedImageUrl, setUploadedImageUrl] = useState<string | null>(null);
   const [uploadedFileName, setUploadedFileName] = useState<string>('');
-  const [ocrProgress, setOcrProgress] = useState(0);
+  const [, setOcrProgress] = useState(0);
   const [receiptText, setReceiptText] = useState<string>('');
   const [storeName, setStoreName] = useState<string>('');
 
@@ -64,7 +64,7 @@ export default function Home() {
   };
 
   // Initialize OCR processor
-  const { processImage, isProcessing: ocrProcessing, progress } = OCRProcessor({
+  const { processImage, progress } = OCRProcessor({
     onOCRComplete: (text, items) => {
       setReceiptItems(items);
       setReceiptText(text);

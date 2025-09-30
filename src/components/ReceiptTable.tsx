@@ -1,7 +1,7 @@
 'use client';
 
 import { ReceiptItem, Person } from '@/types';
-import { Check, ShoppingBag, DollarSign, Users, Zap } from 'lucide-react';
+import { Check, Users, Zap } from 'lucide-react';
 import ItemElaboration from './ItemElaboration';
 
 interface ReceiptTableProps {

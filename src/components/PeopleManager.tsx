@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Plus, X, Users, User, Sparkles } from 'lucide-react';
+import { Plus, X, User, Sparkles } from 'lucide-react';
 import { Person } from '@/types';
 
 interface PeopleManagerProps {
@@ -101,7 +101,7 @@ export default function PeopleManager({ people, onPeopleChange }: PeopleManagerP
         {/* People list */}
         {people.length > 0 && (
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
-            {people.map((person, index) => (
+            {people.map((person) => (
               <div
                 key={person.id}
                 className="group relative p-2 bg-gray-50 rounded-lg border border-gray-200 hover:shadow-md transition-all duration-200"

@@ -208,8 +208,8 @@ EXTRACTION RULES:
       }
 
       // Validate and transform the result
-      const items: ReceiptItem[] = result.items?.map((item: any, index: number) => {
-        const price = parseFloat(item.price);
+      const items: ReceiptItem[] = result.items?.map((item: { id?: string; name?: string; price: number | string }, index: number) => {
+        const price = parseFloat(String(item.price));
         
         // Validate price is reasonable (between $0.01 and $1000)
         const validatedPrice = (price && price > 0.01 && price < 1000) ? price : 0;
@@ -239,7 +239,7 @@ EXTRACTION RULES:
         method: 'openai-vision'
       });
 
-    } catch (openaiError: any) {
+    } catch (openaiError: unknown) {
       console.error('OpenAI Vision API error:', openaiError);
       
       // Fallback to mock data if OpenAI API fails

@@ -60,20 +60,20 @@ export default function ReceiptTable({ items, people, onItemsChange, receiptText
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
-      <div className="flex items-center justify-between mb-6">
+    <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 sm:mb-6 gap-3">
         <div>
-          <h2 className="text-xl font-semibold text-gray-900">
+          <h2 className="text-lg sm:text-xl font-semibold text-black">
             Receipt Items
           </h2>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm sm:text-base text-black font-semibold">
             Assign items to people for bill splitting
           </p>
         </div>
         {people.length > 0 && (
           <button
             onClick={splitEvenly}
-            className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors text-sm font-medium"
+            className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors text-sm font-medium w-full sm:w-auto"
           >
             <Zap className="w-4 h-4" />
             Split Evenly
@@ -82,22 +82,22 @@ export default function ReceiptTable({ items, people, onItemsChange, receiptText
       </div>
 
       {/* Summary */}
-      <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-gray-50 rounded-lg">
+      <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-4 sm:mb-6 p-3 sm:p-4 bg-gray-50 rounded-lg">
         <div className="text-center">
-          <p className="text-sm text-gray-600">Total</p>
-          <p className="text-lg font-semibold text-gray-900">
+          <p className="text-xs sm:text-sm text-black font-semibold">Total</p>
+          <p className="text-base sm:text-lg font-bold text-black">
             ${getTotalPrice().toFixed(2)}
           </p>
         </div>
         <div className="text-center">
-          <p className="text-sm text-gray-600">Assigned</p>
-          <p className="text-lg font-semibold text-green-600">
+          <p className="text-xs sm:text-sm text-black font-semibold">Assigned</p>
+          <p className="text-base sm:text-lg font-bold text-green-700">
             ${getAssignedTotal().toFixed(2)}
           </p>
         </div>
         <div className="text-center">
-          <p className="text-sm text-gray-600">Unassigned</p>
-          <p className="text-lg font-semibold text-orange-600">
+          <p className="text-xs sm:text-sm text-black font-semibold">Unassigned</p>
+          <p className="text-base sm:text-lg font-bold text-orange-700">
             ${getUnassignedTotal().toFixed(2)}
           </p>
         </div>
@@ -105,12 +105,12 @@ export default function ReceiptTable({ items, people, onItemsChange, receiptText
 
       {/* Unassigned Items Warning */}
       {getUnassignedTotal() > 0 && (
-        <div className="mb-6 p-4 bg-orange-100 border-2 border-orange-500 rounded-lg">
-          <div className="flex items-center gap-3">
-            <div className="w-6 h-6 bg-orange-600 rounded-full flex items-center justify-center">
-              <span className="text-white text-sm font-bold">!</span>
+        <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-orange-100 border-2 border-orange-500 rounded-lg">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className="w-5 h-5 sm:w-6 sm:h-6 bg-orange-600 rounded-full flex items-center justify-center flex-shrink-0">
+              <span className="text-white text-xs sm:text-sm font-bold">!</span>
             </div>
-            <p className="text-orange-900 text-base font-semibold">
+            <p className="text-orange-900 text-sm sm:text-base font-bold">
               {items.filter(item => item.assignedTo.length === 0).length} unassigned item{items.filter(item => item.assignedTo.length === 0).length !== 1 ? 's' : ''} totaling ${getUnassignedTotal().toFixed(2)}
             </p>
           </div>

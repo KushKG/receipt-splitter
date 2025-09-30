@@ -80,10 +80,10 @@ export default function FileUpload({ onFileSelect, isLoading, progress }: FileUp
   return (
     <div className="w-full max-w-2xl mx-auto">
       <div
-        className={`relative border-2 border-dashed rounded-lg p-8 text-center transition-colors ${
+        className={`relative border-2 border-dashed rounded-lg p-4 sm:p-8 text-center transition-colors ${
           dragActive
-            ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20'
-            : 'border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500'
+            ? 'border-blue-500 bg-blue-50'
+            : 'border-gray-300 hover:border-gray-400'
         } ${isLoading ? 'opacity-50 pointer-events-none' : ''}`}
         onDragEnter={handleDrag}
         onDragLeave={handleDrag}
@@ -100,23 +100,25 @@ export default function FileUpload({ onFileSelect, isLoading, progress }: FileUp
         />
         
         {selectedFile ? (
-          <div className="space-y-4">
-            <div className="flex items-center justify-center space-x-3">
-              <FileImage className="w-8 h-8 text-green-500" />
-              <div className="text-left">
-                <p className="font-medium text-black">
-                  {selectedFile.name}
-                </p>
-                <p className="text-sm text-black font-semibold">
-                  {(selectedFile.size / 1024 / 1024).toFixed(2)} MB
-                </p>
+          <div className="space-y-3 sm:space-y-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <div className="flex items-center space-x-3 flex-1">
+                <FileImage className="w-6 h-6 sm:w-8 sm:h-8 text-green-500 flex-shrink-0" />
+                <div className="text-left min-w-0 flex-1">
+                  <p className="font-medium text-black text-sm sm:text-base truncate">
+                    {selectedFile.name}
+                  </p>
+                  <p className="text-xs sm:text-sm text-black font-semibold">
+                    {(selectedFile.size / 1024 / 1024).toFixed(2)} MB
+                  </p>
+                </div>
               </div>
               <button
                 onClick={clearFile}
-                className="p-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+                className="p-2 text-gray-400 hover:text-gray-600 rounded-full hover:bg-gray-100"
                 disabled={isLoading}
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
             </div>
             {isLoading && (
@@ -139,14 +141,14 @@ export default function FileUpload({ onFileSelect, isLoading, progress }: FileUp
             )}
           </div>
         ) : (
-          <div className="space-y-4">
-            <Upload className="w-12 h-12 text-gray-400 mx-auto" />
+          <div className="space-y-3 sm:space-y-4">
+            <Upload className="w-10 h-10 sm:w-12 sm:h-12 text-gray-400 mx-auto" />
             <div>
-              <p className="text-lg font-medium text-black">
+              <p className="text-base sm:text-lg font-medium text-black">
                 Upload your receipt
               </p>
-              <p className="text-sm text-black font-medium">
-                Drag and drop an image here, or click to select
+              <p className="text-xs sm:text-sm text-black font-medium">
+                Drag and drop an image here, or tap to select
               </p>
             </div>
             <p className="text-xs text-black font-semibold">

@@ -49,12 +49,12 @@ export default function PeopleManager({ people, onPeopleChange }: PeopleManagerP
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
-      <div className="mb-6">
-        <h2 className="text-xl font-semibold text-black mb-2">
+    <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
+      <div className="mb-4 sm:mb-6">
+        <h2 className="text-lg sm:text-xl font-semibold text-black mb-2">
           People
         </h2>
-        <p className="text-gray-700">
+        <p className="text-sm sm:text-base text-black font-semibold">
           Add people to split the bill
         </p>
       </div>
@@ -100,11 +100,11 @@ export default function PeopleManager({ people, onPeopleChange }: PeopleManagerP
 
         {/* People list */}
         {people.length > 0 && (
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
             {people.map((person) => (
               <div
                 key={person.id}
-                className="group relative p-2 bg-gray-50 rounded-lg border border-gray-200 hover:shadow-md transition-all duration-200"
+                className="group relative p-3 sm:p-2 bg-gray-50 rounded-lg border border-gray-200 hover:shadow-md transition-all duration-200"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">

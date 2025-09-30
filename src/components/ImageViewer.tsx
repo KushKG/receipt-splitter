@@ -34,11 +34,11 @@ export default function ImageViewer({ imageUrl, fileName }: ImageViewerProps) {
 
       {/* Modal */}
       {isOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg max-w-4xl max-h-full overflow-hidden">
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-2 sm:p-4">
+          <div className="bg-white rounded-lg max-w-4xl w-full max-h-full overflow-hidden">
             {/* Header */}
-            <div className="flex items-center justify-between p-4 border-b border-gray-200">
-              <h3 className="text-lg font-semibold text-black">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between p-3 sm:p-4 border-b border-gray-200 gap-2">
+              <h3 className="text-base sm:text-lg font-semibold text-black truncate">
                 {fileName}
               </h3>
               <div className="flex items-center gap-2">
@@ -59,7 +59,7 @@ export default function ImageViewer({ imageUrl, fileName }: ImageViewerProps) {
             </div>
 
             {/* Image */}
-            <div className="p-4 overflow-auto max-h-[80vh] flex justify-center items-center">
+            <div className="p-2 sm:p-4 overflow-auto max-h-[80vh] flex justify-center items-center">
               <div className="relative max-w-full max-h-[70vh]">
                 <Image
                   src={imageUrl}

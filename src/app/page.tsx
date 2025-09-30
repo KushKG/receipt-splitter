@@ -128,22 +128,22 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-6">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-black mb-2">
+    <div className="min-h-screen bg-gray-50 py-4 px-2 sm:py-6 sm:px-4">
+      <div className="container mx-auto max-w-4xl">
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl font-bold text-black mb-2">
             Receipt Splitter
           </h1>
-          <p className="text-black font-semibold">
+          <p className="text-sm sm:text-base text-black font-semibold px-2">
             Upload a receipt and split the bill among friends
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {/* File Upload Section */}
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-semibold text-black">
+          <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
+              <h2 className="text-lg sm:text-xl font-semibold text-black">
                 Upload Receipt
               </h2>
               {uploadedImageUrl && (

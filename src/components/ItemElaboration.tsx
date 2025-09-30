@@ -79,21 +79,21 @@ export default function ItemElaboration({ itemName, itemPrice, receiptText, stor
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4">
-          <div className="bg-white rounded-lg shadow-xl max-w-lg w-full max-h-[80vh] overflow-hidden">
-            <div className="flex justify-between items-center p-4 border-b border-gray-200">
-              <h3 className="text-lg font-semibold text-black">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-2 sm:p-4">
+          <div className="bg-white rounded-lg shadow-xl max-w-lg w-full max-h-[90vh] sm:max-h-[80vh] overflow-hidden">
+            <div className="flex justify-between items-center p-3 sm:p-4 border-b border-gray-200">
+              <h3 className="text-base sm:text-lg font-semibold text-black">
                 Item Details
               </h3>
               <button
                 onClick={() => setIsOpen(false)}
                 className="p-2 rounded-full hover:bg-gray-100 text-black hover:text-gray-800 transition-colors"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
             </div>
             
-            <div className="p-4">
+            <div className="p-3 sm:p-4">
               {/* Item Info */}
               <div className="mb-4 p-3 bg-gray-50 rounded-lg">
                 <h4 className="font-semibold text-black mb-1">{itemName}</h4>

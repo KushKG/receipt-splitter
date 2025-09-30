@@ -83,7 +83,7 @@ export default function PeopleManager({ people, onPeopleChange }: PeopleManagerP
                   if (!newPersonName.trim()) setIsAdding(false);
                 }}
                 placeholder="Enter person's name"
-                className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-sm"
+                className="text-black flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-sm"
                 autoFocus
               />
               <button

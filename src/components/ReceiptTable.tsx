@@ -172,11 +172,11 @@ export default function ReceiptTable({ items, people, onItemsChange, receiptText
                     </p>
                   </div>
                 </div>
-                {item.assignedTo.length === 0 && (
+                {/* {item.assignedTo.length === 0 && (
                   <div className="text-orange-800 font-bold text-sm">
                     UNASSIGNED
                   </div>
-                )}
+                )} */}
               </div>
 
               {/* People Assignment */}
